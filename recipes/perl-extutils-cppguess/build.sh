@@ -1,8 +1,9 @@
 #!/bin/bash
 
-rm -rf t/002_icpp.t
+rm -f t/002_icpp.t
 
 export LC_ALL="en_US.UTF-8"
+export PERL_MM_OPT="CCCDLFLAGS=-fPIC"
 
 if [[ -f Build.PL ]]; then
     perl Build.PL
