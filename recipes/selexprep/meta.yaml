@@ -1,5 +1,5 @@
 {% set name = "selexprep" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.5" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 45073103f3466c048c0112a67f6872b9522940dd63617beb8c2f10c9ffc7b6b5
+  sha256: 6058764d65b059d1bead2a257127074b5102447a7b8ffbf746c1b653dfcd300d
 
 build:
   noarch: python
