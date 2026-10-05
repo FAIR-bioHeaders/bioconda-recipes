@@ -1,6 +1,6 @@
 {% set name = "tesseract-assembler" %}
-{% set version = "1.4.0" %}
-{% set sha256 = "6f5f476621fc6cfd70e7e404bc5f8d8c5b0b25a378320d10b494ff88faa81e75" %}
+{% set version = "1.5.0" %}
+{% set sha256 = "d1e6ef973727d226bcaf6b6630e31cd866ac2960512c4959d5c38758eed6d715" %}
 
 package:
   name: {{ name }}
