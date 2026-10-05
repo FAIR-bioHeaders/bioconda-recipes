@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/marbl/ModDotPlot/archive/v{{ version }}.tar.gz
-  sha256: 305e134a248fece3bea45eb51a8b8e893656984721b1b249716fca1901d72076
+  sha256: af97c4d2b0e9aaf84b38dff5dca6b05ebcc21e07c29199cf7719070254a3fae9
 
 build:
   number: 0
