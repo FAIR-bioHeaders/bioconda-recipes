@@ -1,4 +1,4 @@
-{% set version = "0.9.9" %}
+{% set version = "1.0.0" %}
 
 package:
   name: moddotplot
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/marbl/ModDotPlot/archive/v{{ version }}.tar.gz
-  sha256: 7c897cdfbe55b59e7c2db12024425599eb1676af8044648475aa3470574cdc66
+  sha256: 9a36a1846d889a8edc61179551773957df7525e4e1f7f9c88c2cbf984a47b3b7
 
 build:
   number: 0
