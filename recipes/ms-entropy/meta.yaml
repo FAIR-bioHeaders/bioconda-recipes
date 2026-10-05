@@ -1,5 +1,5 @@
 {% set name = "ms-entropy" %}
-{% set version = "1.5.2" %}
+{% set version = "1.5.3" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ms_entropy-{{ version }}.tar.gz
-  sha256: 490ef92af254766ec22a995c324a377c4a651c11ed7dbe958a8fda50c00584c1
+  sha256: 0a859e28bf68596666478c2794d425ca022138f6242f11c85b74690e685674af
   patches:
     - 0001-setup.py.patch  # [osx]
 
