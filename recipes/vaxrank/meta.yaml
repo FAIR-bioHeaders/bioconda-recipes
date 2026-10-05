@@ -1,5 +1,5 @@
 {% set name = "vaxrank" %}
-{% set version = "3.36.2" %}
+{% set version = "3.37.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 820b51cb8371a8842102a1c834411d59c871d64f6d84891fd7fce5bffc3cc571
+  sha256: cea67862e31d48414bb52eceaa013fcb18d36a288154d5cc429b7d406cd25334
   patches:
     #- drop-removed-jinja2-autoescape-extension.patch
     - lazy-pdfkit-import.patch
