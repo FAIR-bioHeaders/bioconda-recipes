@@ -1,6 +1,6 @@
 {% set name = "pyensembl" %}
-{% set version = "2.23.2" %}
-{% set sha256 = "3aed93dae9adfb6910e5f58ec7b6fa7743fdabe0df7b760ceeb247699f808f16" %}
+{% set version = "2.24.1" %}
+{% set sha256 = "dbe14d2bca444e1108b822ea77c76357836a6708e36b0a4373ef4ddf641b5b01" %}
 
 package:
   name: {{ name }}
