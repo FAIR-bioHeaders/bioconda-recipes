@@ -1,6 +1,6 @@
 {% set name = "hyphy" %}
-{% set version = "2.5.101" %}
-{% set sha256 = "7eb3ff9c660e9a88b3e5f3ed8c553dc9ed6ab254259a9d00612d8347795c961f" %}
+{% set version = "2.5.102" %}
+{% set sha256 = "6aeea1d13bd6baf6440c044dd36a99866dc6d68e737b4e3114524cafa815c48c" %}
 
 package:
   name: {{ name }}
