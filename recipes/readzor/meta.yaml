@@ -1,6 +1,6 @@
-{% set version = "0.4.3" %}
+{% set version = "0.4.4" %}
 {% set name = "readzor" %}
-{% set sha256 = "61382e2921d51536adbb74c4b3b34d8748a8568f24cf83dca54167db49f0be80" %}
+{% set sha256 = "6a57c5e58dc5102e3a2b69f82954a9793388af78dddcc68131792b52902790e0" %}
 
 package:
   name: '{{ name }}'
