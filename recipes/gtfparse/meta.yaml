@@ -1,6 +1,6 @@
 {% set name = "gtfparse" %}
-{% set version = "3.0.0" %}
-{% set sha256 = "6e85f3f238f8eaa126cafcf59ea7888caf9ca2c20415b37e58fb6fc316b77ab0" %}
+{% set version = "3.0.2" %}
+{% set sha256 = "33adafa383b71eacd88c92d7a6218ca27790d7f4dfac61ad2aac94fee05c779a" %}
 
 package:
   name: {{ name }}
