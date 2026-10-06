@@ -1,5 +1,5 @@
 {% set name = "harmonypy" %}
-{% set version = "2.0.2" %}
+{% set version = "2.1.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "0d6e4491edb4638db3ab8d90fdc961df8b4d9b46d80b30afadaaf5026f102a7d"
+  sha256: "e255c927848564b2198c4b6d09de9402f5ab10e92dcb1be6f8a49164190b4a5c"
 
 build:
   number: 0
