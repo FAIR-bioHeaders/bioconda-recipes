@@ -1,5 +1,5 @@
 {% set name = "serovar_detector" %}
-{% set version = "1.1.2" %}
+{% set version = "1.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ae415475f8926ac19cd6c8a20a8a29f9bbcf381241bf6d86e73239069b59bb97
+  sha256: d1a196f84d4ee76df92f8f2da0313bed58d4015081138c2ae5236395bad38705
 
 build:
   number: 0
