@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/clintval/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 0000000000000000000000000000000000000000000000000000000000000000
+  sha256: e47af6a6dcba9b220639ac7133455a338d177cc69775d9432abb02f010628917
 
 build:
   number: 0
@@ -32,7 +32,7 @@ about:
   license_file:
     - LICENSE
     - THIRDPARTY.yml
-  summary: "Separate somatic variant calls from library-preparation damage artifacts."
+  summary: "Flag somatic variant calls that are library-preparation artifacts."
   dev_url: "https://github.com/clintval/{{ name }}"
   doc_url: "https://github.com/clintval/{{ name }}/blob/{{ version }}/README.md"
 
