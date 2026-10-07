@@ -1,5 +1,5 @@
 {% set name = "blobtk" %}
-{% set version = "0.8.3" %}
+{% set version = "0.8.4" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/genomehubs/blobtk/archive/{{ version }}.tar.gz
-  sha256: 7b1ca47d65e40e41382179c3592ac2ceb23f6470c7be0650c8bd03bf3893a094
+  sha256: 25d01fc6aa203fefb1763903d2547735fc9efce06c35e5bb989c70cd03190a70
 
 build:
   number: 0
