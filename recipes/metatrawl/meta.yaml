@@ -1,5 +1,5 @@
 {% set name = "metatrawl" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 27e5530251bc7ef36c85edeafa468ab372a549115f30ea3bfa7342166f46bf2f
+  sha256: 0b8573eef876089a92265898d028192a911e7805e0e95cad8da2656cfc6a38b4
 
 build:
-  number: 1
+  number: 0
   noarch: python
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
