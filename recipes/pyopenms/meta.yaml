@@ -1,5 +1,5 @@
 {% set name = "pyopenms" %}
-{% set version = "3.5.0" %}  # if ends with 'dev' it is considered a development release and pulled from GitHub
+{% set version = "3.6.0" %}  # if ends with 'dev' it is considered a development release and pulled from GitHub
 
 package:
   name: {{ name }}
@@ -14,7 +14,7 @@ source:
 
 source:
   url: https://github.com/OpenMS/OpenMS/releases/download/release%2F{{ version }}/OpenMS-{{ version }}.tar.gz
-  sha256: 29ddff876b6f7e604edca962cbd2f57fe2467262db4b4f039aa43148589f2dbd
+  sha256: 70c7f7afff938634b5e87a7c9f71856a4469ae0e45d66dd50655460dbf6d6535
 {% endif %}
 
 build:
@@ -25,6 +25,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
     - ninja
     - cmake
   host:
@@ -80,5 +81,3 @@ extra:
   identifiers:
     - biotools:openms
     - doi:10.1038/s41592-024-02197-7
-  skip-lints:
-    - compiler_needs_stdlib_c
