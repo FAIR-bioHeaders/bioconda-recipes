@@ -1,5 +1,5 @@
 {% set name = "mhctools" %}
-{% set version = "3.47.12" %}
+{% set version = "3.47.13" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7266f5bc415108d49ef731fe7d188ee49cd0da6cdd0b14a9bf972d2d6a5b62dd
+  sha256: d3844a44d04f718d8680fcfead5665511690d08126e8cf4beb5a7e010078e5d1
 
 build:
   number: 0
