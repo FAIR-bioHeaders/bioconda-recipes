@@ -1,5 +1,5 @@
 {% set name = "crispritz" %}
-{% set version = "2.8.4" %}
+{% set version = "2.9.0" %}
 
 package:
   name: {{name}}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/pinellolab/CRISPRitz/archive/v{{ version }}.tar.gz
-  sha256: 5584ba1b17a279c463a076c77755cbdbcb6b2058df209c4115a93b0d1a257fbc
+  sha256: 57031301e8b406bab306cb161a4d76a284d95b73cc426545e83113154a1c8027
 
 build:
   number: 0
