@@ -1,5 +1,5 @@
-{% set version = "2026.10.07" %} 
-{% set sha256 = "680f3f9f308c6f7a905255df2d5c0b8114016909cc3ffc84209a53e6e6d46870" %}
+{% set version = "2026.10.08" %} 
+{% set sha256 = "7d9cc49148130e53a4190db0078c1f4a89cdb520ecadec4def146342b7331c5d" %}
 
 package:
   name: rsat-core
