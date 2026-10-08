@@ -11,11 +11,6 @@ source:
   sha256: 8fa2e2ef78c5983b816e8bddb18f6d5720c3016acb29750f019879c67a63613d
 
 build:
-  entry_points:
-    - onsite = onsite.onsitec:main
-    - ascore = onsite.ascore.cli:main
-    - phosphors = onsite.phosphors.cli:main
-    - lucxor = onsite.lucxor.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
   noarch: python
@@ -29,9 +24,8 @@ requirements:
     - pip
   run:
     - python >=3.11,<3.13
-    - pyopenms >=3.5.0
-    - eigen >=3.4.0
-    - numpy >=1.26.0
+    - pyopenms >=3.6.0
+    - numpy >=2.3.2
     - scipy >=1.16.0
     - click >=8.0.0
     - pyarrow
@@ -59,7 +53,3 @@ extra:
   recipe-maintainers:
     - ypriverol
     - weizhongchun
-  
-
-
-
