@@ -1,4 +1,4 @@
-{% set version = "2.9.7" %}
+{% set version = "2.9.8" %}
 
 package:
   name: rnaframework
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/dincarnato/RNAFramework/archive/refs/tags/{{ version }}.tar.gz
-  sha256: aa12543fb049415c2f5d39a0b1336901c3eab079d16ea2e593d40665decdac8c
+  sha256: 031ff68eae8eac9a3056dd3d81ac050cdecfd2aa693daf7cad235e9df21c37a2
 
 build:
   number: 0
