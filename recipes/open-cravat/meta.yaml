@@ -1,13 +1,13 @@
 {% set name = "open-cravat" %}
-{% set version = "3.2.0" %}
+{% set version = "3.2.1" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://files.pythonhosted.org/packages/3c/98/e701f5a5193e59cfae18b8a45241664f048e1b83984d6151c6330bfb8051/open_cravat-3.2.0.tar.gz
-  sha256: 6572c4f9705e97c9b2cc7dd44253bfabab4fa812721ba7ffa86c3672a015a76f
+  url: https://files.pythonhosted.org/packages/4e/f2/4b707609662ff9d69bc3622e9e703e5682355b26d74c17b8ffad8c299e3d/open_cravat-3.2.1.tar.gz
+  sha256: 8962518853d7b5be5f9e8f3965c7e64b0431cef193f3b836000715fa45ef54cb
 
 build:
   number: 0
