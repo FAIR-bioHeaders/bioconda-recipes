@@ -47,3 +47,9 @@ The nightly uploader jobs build any recipes that exist on master but were not su
 [nightly_osx-arm64_link]: https://github.com/bioconda/bioconda-recipes/actions/workflows/nightly.yml
 
 [nightly_linux-aarch64_link]: https://app.circleci.com/insights/github/bioconda/bioconda-recipes/workflows/Nightly%20(ARM)/overview?branch=master&reporting-window=last-24-hours
+
+## Licensing
+
+[![FAIR BioHeaders contributions: MPL-2.0](https://img.shields.io/badge/FAIR_BioHeaders_contributions-MPL--2.0-blue.svg)](FAIR-BIOHEADERS-LICENSE)
+
+The upstream Bioconda tree remains under its [existing MIT license](LICENSE). [FAIR BioHeaders licensing policy](FAIR-BIOHEADERS-LICENSE) applies only to separately identified project-authored additions; it does not relicense upstream recipes or the software they package. Upstream submissions must follow Bioconda’s contribution terms.
