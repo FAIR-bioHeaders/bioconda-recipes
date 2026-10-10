@@ -1,5 +1,5 @@
 {% set name = "fair-bioheaders" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fair_bioheaders-{{ version }}.tar.gz
-  sha256: e83f019e768dd3ee8ccfa7e0467d0d0327fd1c7e79f4f3792e6a5fb7a697f370
+  sha256: a3193b242ad3f9b6e5c0cf415fb6ed14fa0802118c0b27f63623f75afa898084
 
 build:
   number: 0
@@ -44,6 +44,7 @@ test:
   commands:
     - bioheaders --version
     - bioheaders validate --help
+    - bioheaders assess --help
     - fhr-convert --version
     - fhr-validate --help
     - fhr-fasta-combine --help
@@ -55,16 +56,18 @@ test:
 
 about:
   home: https://github.com/FAIR-bioHeaders/FAIR-bioHeaders-Tools
-  summary: Validate and convert FAIR-bioHeaders (FHR) metadata in JSON, YAML, HTML microdata, FASTA and GFA.
+  summary: Validate and convert FAIR-bioHeaders (FHR) metadata in JSON, YAML, JSON-LD, HTML microdata, FASTA and GFA.
   description: |
     FAIR-bioHeaders embed provenance metadata in reference genome FASTA and GFA
-    files (the FHR header). These tools convert between JSON, YAML, HTML
-    microdata and embedded FASTA/GFA headers, validate metadata against the
-    schema, attach and strip headers, and verify the SHA-512/256 file checksum.
+    files (the FHR header). These tools convert between JSON, YAML, JSON-LD,
+    HTML microdata and embedded FASTA/GFA headers, validate metadata against
+    the schema, attach and strip headers, and verify the SHA-512/256 file
+    checksum. bioheaders assess checks how FAIR the header of a FASTA, GFF3,
+    VCF, GFA or other text file is.
     Plain and gzip/bgzip-compressed files are streamed with bounded memory.
     Formerly published on PyPI as fhr; the fhr-* commands are kept.
-  license: Public-Domain
-  license_family: PUBLIC-DOMAIN
+  license: MPL-2.0
+  license_family: MOZILLA
   license_file: LICENSE
   doc_url: https://github.com/FAIR-bioHeaders/FHR-Specification
   dev_url: https://github.com/FAIR-bioHeaders/FAIR-bioHeaders-Tools
