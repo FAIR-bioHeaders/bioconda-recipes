@@ -88,6 +88,6 @@ recipe build or upload.
 `docs/fair-bioheaders/ci.md` records the observed workflow activation gap and the
 new lightweight documentation lane. Run its exact commands for owned Markdown
 and `scripts/fair_bioheaders/` tests. Its result is not recipe lint/build coverage;
-keep issue #4 open for the remaining upstream-compatible recipe lane. Check that
+keep issue #4 open for real recipe/platform verification of the scoped lane. Check that
 the new workflow actually reports a PR result before claiming activation worked.
 Do not enable inherited publishing jobs or change branch protection as a shortcut.

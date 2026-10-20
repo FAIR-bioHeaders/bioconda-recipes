@@ -19,7 +19,11 @@ establish the underlying fork-administration setting or permission history.
 Do not enable all inherited publishing/nightly jobs as a workaround. Verify the
 new PR run actually appears before claiming the reporting gap is fixed; if it
 needs owner activation, record the exact setting/action rather than bypassing
-fork security. No Actions settings or inherited workflows are changed here.
+fork security. No Actions settings or publishing/nightly workflows are changed here. Opening
+this PR registered the new documentation workflow and the inherited PR workflow;
+the new documentation job passed. The inherited Lint job then failed with
+`No remote matching 'bioconda/bioconda-recipes' found`, confirming that its
+recipe-selection setup assumes an upstream remote absent from a fork checkout.
 
 ## Lightweight documentation lane
 
@@ -43,6 +47,19 @@ read-only repository permissions and pinned Actions; no package jobs, registry
 credentials, uploads or channel publication are involved.
 
 ## Recipe validation remains upstream work
+
+The inherited PR workflow now starts with a lightweight scope-classification job.
+Owned documentation and its CI/checker support paths skip Conda lint/build jobs;
+recipe paths, global configuration, unknown paths and empty diffs retain the
+original lint → Linux → OSX pipeline. The owned allow-list explicitly includes
+`PR.yml` because this PR adds its routing support; review changes to that workflow
+and run the routing tests rather than assuming it is package validation. Renames
+are inspected as deletion/addition paths, so moving a recipe cannot hide it.
+
+When a fork does need recipe CI, each inherited checkout adds a read-only upstream
+Git remote for bioconda-utils discovery. This fixes the observed missing-remote
+precondition; actual recipe/platform execution has not been exercised in this
+documentation PR and may expose further upstream environment assumptions.
 
 This documentation lane does **not** validate recipes. Do not select it as a
 replacement required check for Bioconda lint/build jobs. Branch-protection changes
@@ -68,8 +85,8 @@ Python. Use the exact current upstream change-selection/platform options before
 building; the help command above does not execute or verify a build. Check source
 artifact hashes, dependencies, licenses and version/build-number rules, then test
 installed CLI/import behavior and packaged schema/data. PR checks must not upload
-packages. Full scoped recipe lint/build reporting and a safe activation strategy
-remain in issue #4; this PR delivers the initial owned-documentation lane only.
+packages. Full scoped recipe lint/platform-build verification on a real recipe change
+remains in issue #4; this PR delivers the initial owned-documentation lane only.
 
 Upstream recipe PRs belong at
 [bioconda/bioconda-recipes](https://github.com/bioconda/bioconda-recipes).

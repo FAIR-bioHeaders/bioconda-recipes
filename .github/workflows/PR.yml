@@ -5,8 +5,29 @@ on:
 concurrency:
   group: build-${{ github.event.pull_request.number || github.head_ref }}
   cancel-in-progress: true
+permissions:
+  contents: read
 jobs:
+  changes:
+    name: Classify PR scope
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      recipe_ci: ${{ steps.scope.outputs.recipe_ci }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Classify changed paths
+        id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: python3 scripts/fair_bioheaders/classify_changes.py --base "$BASE_SHA" --head "$HEAD_SHA"
   lint:
+    needs: changes
+    if: needs.changes.outputs.recipe_ci == 'true'
     name: Lint
     runs-on: ubuntu-22.04
     strategy:
@@ -14,6 +35,9 @@ jobs:
       max-parallel: 13
     steps:
       - uses: actions/checkout@v4
+      - name: Identify upstream for bioconda-utils in forks
+        if: github.repository != 'bioconda/bioconda-recipes'
+        run: git remote add bioconda-upstream https://github.com/bioconda/bioconda-recipes.git
 
       - name: Fetch commits through the merge base
         uses: fulcrumgenomics/fetch-through-merge-base@v1
@@ -98,6 +122,9 @@ jobs:
             /usr/share/swift
 
       - uses: actions/checkout@v4
+      - name: Identify upstream for bioconda-utils in forks
+        if: github.repository != 'bioconda/bioconda-recipes'
+        run: git remote add bioconda-upstream https://github.com/bioconda/bioconda-recipes.git
 
       - name: Fetch commits through the merge base
         uses: fulcrumgenomics/fetch-through-merge-base@v1
@@ -201,6 +228,9 @@ jobs:
     needs: build-linux
     steps:
       - uses: actions/checkout@v4
+      - name: Identify upstream for bioconda-utils in forks
+        if: github.repository != 'bioconda/bioconda-recipes'
+        run: git remote add bioconda-upstream https://github.com/bioconda/bioconda-recipes.git
       
       - name: Fetch commits through the merge base
         uses: fulcrumgenomics/fetch-through-merge-base@v1
