@@ -1,6 +1,6 @@
 {% set name = "oxo-flow-cli" %}
-{% set version = "0.23.0" %}
-{% set sha256 = "93285ca3800d78ac8923c817ce5a761cffc18a15a6d0efea9f2c44d0d9e68a94" %}
+{% set version = "0.24.0" %}
+{% set sha256 = "1d8dcba482ea353ef2b7a322bbfaf26105e577156b110c9249d5744fc9e88de8" %}
 
 package:
   name: {{ name|lower }}
