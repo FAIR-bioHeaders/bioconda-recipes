@@ -49,8 +49,36 @@ for implementing an existing contract. Never rewrite immutable releases, fixed
 schema aliases or existing file-bound headers as incidental cleanup. Header edits
 require checksum recomputation and may affect downstream parent links.
 
-Proposals are not adopted contracts: FAIR-bioHeaders-Specification#139 / draft
-PR #140 (structured vouchers) and profiles still under review in that repository
-(#56) remain proposals until adopted. Implemented subsets do not establish full
-profile or header-family support. The mapping page in fair-bioheaders.github.io#29
-depends on approved profiles.
+Check the adoption decision and released support before implementing a proposal;
+an issue or PR's existence does not establish adoption. Structured vouchers
+(FAIR-bioHeaders-Specification#139/#140) and mapping profiles (#56 in that same
+repository) have their own review history. Implemented subsets do not establish
+full profile or header-family support. The mapping page tracked in
+fair-bioheaders.github.io#29 depends on approved profiles. Recheck these records
+rather than relying on a copied description of their temporary status.
+
+## FAIR BioHeaders recipe handoff
+
+Before editing, locate the actual recipe for the released distribution and check
+upstream bioconda/bioconda-recipes and any existing recipe PR. Do not assume a
+recipe named `fair-bioheaders`, `fhr` or `gff3-validator` already exists in this
+fork: the reviewed tree had no matching recipe directory. Establish ownership and
+current upstream state rather than creating duplicate packages from this note.
+Changes to this fork are reviewed locally; publication to the Bioconda channel
+requires the appropriate upstream PR/merge and build, not a merge here alone.
+
+Follow `.github/PULL_REQUEST_TEMPLATE.md`, `config.yml` and the current upstream
+recipe guidance. For an existing version's packaging/dependency change, increment
+the build number; for a new version normally reset it to zero. Update source
+hashes from the actual released artifact, preserve applicable licenses and test
+installed imports/CLI behavior and required package data. Do not package an
+unadopted schema through a downstream patch or infer that a compatibility
+package's historical name is the current distribution name.
+
+The PR workflow uses `bioconda-utils lint --loglevel debug --git-range
+origin/BASE HEAD` (one command, substitute the actual base) and platform build jobs
+with `bioconda-utils build recipes config.yml`. Follow the exact change-selection,
+platform and artifact options in `.github/workflows/PR.yml` and upstream guidance
+before running a build; do not launch the whole recipe collection for a one-recipe
+change. State which package/platform tests ran. Guidance-only changes need no
+recipe build or upload.
