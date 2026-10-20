@@ -82,3 +82,12 @@ platform and artifact options in `.github/workflows/PR.yml` and upstream guidanc
 before running a build; do not launch the whole recipe collection for a one-recipe
 change. State which package/platform tests ran. Guidance-only changes need no
 recipe build or upload.
+
+## Fork documentation CI
+
+`docs/fair-bioheaders/ci.md` records the observed workflow activation gap and the
+new lightweight documentation lane. Run its exact commands for owned Markdown
+and `scripts/fair_bioheaders/` tests. Its result is not recipe lint/build coverage;
+keep issue #4 open for real recipe/platform verification of the scoped lane. Check that
+the new workflow actually reports a PR result before claiming activation worked.
+Do not enable inherited publishing jobs or change branch protection as a shortcut.

@@ -1,0 +1,32 @@
+name: FAIR BioHeaders fork documentation
+# Always report this small check; do not run Conda builds for documentation.
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  documentation:
+    name: FAIR BioHeaders documentation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.13'
+      - run: python -m unittest discover -s scripts/fair_bioheaders -p 'test_*.py' -v
+      - run: python scripts/fair_bioheaders/check_docs.py AGENTS.md docs/fair-bioheaders/ci.md
+      - uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff # v24.2.0
+        with:
+          globs: |
+            AGENTS.md
+            docs/fair-bioheaders/*.md
+          config: docs/fair-bioheaders/.markdownlint.json
+      - name: State validation boundary
+        run: echo 'This job checks owned documentation only. Recipe lint, platform builds and package tests must run through the upstream Bioconda contribution workflow; this job does not claim recipe validation or channel publication.' >> "$GITHUB_STEP_SUMMARY"
