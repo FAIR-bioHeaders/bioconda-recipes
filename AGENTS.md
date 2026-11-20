@@ -89,7 +89,7 @@ rather than relying on a copied description of their temporary status.
 Before editing, locate the actual recipe for the released distribution and check
 upstream bioconda/bioconda-recipes and any existing recipe PR. Do not assume a
 recipe named `fair-bioheaders`, `fhr` or `gff3-validator` already exists in this
-fork: the reviewed tree had no matching recipe directory. Establish ownership and
+fork: the earlier reviewed tree had no matching recipe directory; the refreshed Round 16 tree contains recipes/fair-bioheaders at 0.8.1. Establish ownership and
 current upstream state rather than creating duplicate packages from this note.
 Changes to this fork are reviewed locally; publication to the Bioconda channel
 requires the appropriate upstream PR/merge and build, not a merge here alone.

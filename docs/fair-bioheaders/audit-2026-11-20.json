@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-20",
+  "tools": {
+    "Bandit": "1.8.6/Python3.13",
+    "Zizmor": "1.16.3",
+    "Gitleaks": "8.30.1",
+    "pip-audit": "2.9.0"
+  },
+  "configuration": "default rules; no suppressions; gitleaks redact=100",
+  "bandit": {
+    "parse_errors": [],
+    "files": 4,
+    "findings": [
+      {
+        "filename": "scripts/fair_bioheaders/classify_changes.py",
+        "line_number": 6,
+        "test_id": "B404",
+        "issue_severity": "LOW",
+        "issue_text": "Consider possible security implications associated with the subprocess module."
+      },
+      {
+        "filename": "scripts/fair_bioheaders/classify_changes.py",
+        "line_number": 24,
+        "test_id": "B607",
+        "issue_severity": "LOW",
+        "issue_text": "Starting a process with a partial executable path"
+      },
+      {
+        "filename": "scripts/fair_bioheaders/classify_changes.py",
+        "line_number": 24,
+        "test_id": "B603",
+        "issue_severity": "LOW",
+        "issue_text": "subprocess call - check for execution of untrusted input."
+      }
+    ]
+  },
+  "secret_matches": [
+    {
+      "scan": "gitleaks-owned-tree.json",
+      "matches": []
+    },
+    {
+      "scan": "gitleaks-owned-history.json",
+      "scope": "all-ref path-restricted history;27commits",
+      "matches": [
+        {
+          "File": "recipes/fair-bioheaders/test-data/minimal.fhgm.gff3",
+          "StartLine": 8,
+          "Commit": "fe2737d93962636371ffd456971b4982758437c7",
+          "RuleID": "generic-api-key",
+          "Fingerprint": "fe2737d93962636371ffd456971b4982758437c7:recipes/fair-bioheaders/test-data/minimal.fhgm.gff3:generic-api-key:8"
+        },
+        {
+          "File": "recipes/fair-bioheaders/test-data/minimal.fhgm.gff3",
+          "StartLine": 10,
+          "Commit": "fe2737d93962636371ffd456971b4982758437c7",
+          "RuleID": "generic-api-key",
+          "Fingerprint": "fe2737d93962636371ffd456971b4982758437c7:recipes/fair-bioheaders/test-data/minimal.fhgm.gff3:generic-api-key:10"
+        }
+      ],
+      "disposition": "public accession/SeqCol fixture identifiers, no authentication credential"
+    }
+  ],
+  "scope": "owned FAIR docs/scripts/recipe and all inherited workflows; unrelated upstream recipes excluded",
+  "zizmor_remaining_findings": 24,
+  "zizmor_PR_workflow_remaining": 0
+}
