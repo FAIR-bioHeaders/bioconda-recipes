@@ -6,8 +6,7 @@ every unrelated upstream package. Recipe version/source hash/constraints/tests
 remain unchanged; fork/source state does not establish channel publication.
 The inherited root README and licenses retain upstream provenance.
 
-Bandit 1.8.6 scans `scripts/fair_bioheaders` with default rules and zero parse
-exceptions. B404/B603/B607 identify the Git subprocess: full 40-hex base/head
+Bandit 1.8.6 scans `scripts/fair_bioheaders` with default rules, zero per-file scanner parse errors and three findings. B404/B603/B607 identify the Git subprocess: full 40-hex base/head
 values are validated and passed as an argument array without a shell. Git and
 the local checkout are the invoking user's trust boundary. Gitleaks 8.30.1 scans
 the owned docs/scripts/recipe snapshot and their all-ref Git path history with
