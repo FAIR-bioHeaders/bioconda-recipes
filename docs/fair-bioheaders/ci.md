@@ -66,9 +66,10 @@ replacement required check for Bioconda lint/build jobs. Branch-protection chang
 remain a separate owner action after successful run verification.
 
 Before changing a FAIR BioHeaders recipe, locate the actual package and existing
-upstream PR. The fork inspected for this work has no recipe directory named
-`fair-bioheaders`, `fhr` or `gff3-validator`; an upstream merge is not automatically
-synced into this fork. Do not create a duplicate recipe based on that absence.
+upstream PR. The refreshed Round 16 tree contains `recipes/fair-bioheaders/meta.yaml` at
+0.8.1. That source checkout does not establish the currently published channel
+version; check upstream and existing PRs before changing it. Do not create a
+duplicate recipe or treat fork synchronization as channel publication.
 
 Follow `.github/PULL_REQUEST_TEMPLATE.md`, `config.yml` and the current upstream
 Bioconda contributor guide. Existing `.github/workflows/PR.yml` documents recipe

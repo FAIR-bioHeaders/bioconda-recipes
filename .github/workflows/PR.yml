@@ -35,13 +35,15 @@ jobs:
       fail-fast: true
       max-parallel: 13
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
       - name: Identify upstream for bioconda-utils in forks
         if: github.repository != 'bioconda/bioconda-recipes'
         run: git remote add bioconda-upstream https://github.com/bioconda/bioconda-recipes.git
 
       - name: Fetch commits through the merge base
-        uses: fulcrumgenomics/fetch-through-merge-base@v1
+        uses: fulcrumgenomics/fetch-through-merge-base@0eb030b008e51931a67b9ccab69b64aeabd8835b # v1
         with:
           base-ref: ${{ github.base_ref }}
           head-ref: ${{ github.sha }}
@@ -122,13 +124,15 @@ jobs:
             /usr/share/dotnet \
             /usr/share/swift
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
       - name: Identify upstream for bioconda-utils in forks
         if: github.repository != 'bioconda/bioconda-recipes'
         run: git remote add bioconda-upstream https://github.com/bioconda/bioconda-recipes.git
 
       - name: Fetch commits through the merge base
-        uses: fulcrumgenomics/fetch-through-merge-base@v1
+        uses: fulcrumgenomics/fetch-through-merge-base@0eb030b008e51931a67b9ccab69b64aeabd8835b # v1
         with:
           base-ref: ${{ github.base_ref }}
           head-ref: ${{ github.sha }}
@@ -228,13 +232,15 @@ jobs:
     # Limited concurrency for osx, so first make sure linux can pass
     needs: build-linux
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
       - name: Identify upstream for bioconda-utils in forks
         if: github.repository != 'bioconda/bioconda-recipes'
         run: git remote add bioconda-upstream https://github.com/bioconda/bioconda-recipes.git
       
       - name: Fetch commits through the merge base
-        uses: fulcrumgenomics/fetch-through-merge-base@v1
+        uses: fulcrumgenomics/fetch-through-merge-base@0eb030b008e51931a67b9ccab69b64aeabd8835b # v1
         continue-on-error: true
         with:
           base-ref: ${{ github.base_ref }}
